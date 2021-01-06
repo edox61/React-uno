@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Todo = ({ todo }) => {
+const Todo = ({ todo, todoDelete }) => {
 
     //const { todo } = props;
 
@@ -23,7 +23,9 @@ const Todo = ({ todo }) => {
                     <button className=" btn btn-sm btn-outline-primary mr-2">
                         Editar
                     </button>
-                    <button className="btn btn-sm btn-outline-danger">
+                    <button
+                        onClick={() => todoDelete(todo.id)}
+                        className="btn btn-sm btn-outline-danger">
                         Eliminar
                     </button>
                 </div>
