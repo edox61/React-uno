@@ -13,7 +13,8 @@ const Todo = ({ todo, todoDelete, todoToogleCompleted }) => {
                     <button
                         onClick={() => todoToogleCompleted(todo.id)}
                         className="btn btn-sm btn-outline-success ml-2">
-                        Terminar
+                        {todo.completed ? 'Terminado' : 'Terminar'}
+
                     </button>
                 </h3>
                 <p className="card-text text-right">

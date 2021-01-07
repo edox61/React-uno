@@ -42,6 +42,7 @@ const App = () => {
 
             if (todo.id === todoId) {
                 return todoEdit
+
             } else {
 
                 return todo
