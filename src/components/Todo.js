@@ -12,7 +12,8 @@ const Todo = ({ todo, todoDelete, todoToogleCompleted }) => {
                     {todo.title}
                     <button
                         onClick={() => todoToogleCompleted(todo.id)}
-                        className="btn btn-sm btn-outline-success ml-2">
+                        className={`btn btn-sm ${todo.completed ? 'btn-outline-success' : 'btn-success'} ml-2`}>
+
                         {todo.completed ? 'Terminado' : 'Terminar'}
 
                     </button>
@@ -34,7 +35,7 @@ const Todo = ({ todo, todoDelete, todoToogleCompleted }) => {
                 </div>
 
             </div>
-        </div>
+        </div >
 
 
     )
