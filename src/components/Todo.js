@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Todo = ({ todo, todoDelete }) => {
+const Todo = ({ todo, todoDelete, todoToogleCompleted }) => {
 
     //const { todo } = props;
 
@@ -10,7 +10,9 @@ const Todo = ({ todo, todoDelete }) => {
             <div className="card-body border border-primary">
                 <h3 className="card-title text-right">
                     {todo.title}
-                    <button className="btn btn-sm btn-outline-success ml-2">
+                    <button
+                        onClick={() => todoToogleCompleted(todo.id)}
+                        className="btn btn-sm btn-outline-success ml-2">
                         Terminar
                     </button>
                 </h3>

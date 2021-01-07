@@ -24,13 +24,32 @@ const App = () => {
 
     const [todos, setTodos] = useState(initialTodos)
 
+    /*Funcion Borrar */
     const TodoDelete = (todoId) => {
-
         const changedTodos = todos.filter(todo => todo.id !== todoId);
+        setTodos(changedTodos);
+    }
+
+    /* Funcion Terminar*/
+    const todoToogleCompleted = (todoId) => {
+        const changedTodos = todos.map(todo => {
+
+            const todoEdit = {
+                ...todo,
+                completed: !todo.completed
+
+            }
+
+            if (todo.id === todoId) {
+                return todoEdit
+            } else {
+
+                return todo
+            }
+
+        })
 
         setTodos(changedTodos);
-
-
     }
 
     return (
@@ -40,6 +59,7 @@ const App = () => {
                     <TodoList
                         todos={todos}
                         todoDelete={TodoDelete}
+                        todoToogleCompleted={todoToogleCompleted}
                     />
                 </div>
                 <div className="col-4">
